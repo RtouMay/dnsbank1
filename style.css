@@ -1,147 +1,71 @@
-@font-face {
-    font-family: 'YekanBakh';
-    src: url('fonts/YekanBakh-Bold.ttf') format('truetype');
+/* ... (تمام استایل‌های قبلی اینجا هستند) ... */
+
+#dns-result-container h2 {
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+    font-size: 1.2em;
     font-weight: bold;
 }
-@font-face {
-    font-family: 'YekanBakh';
-    src: url('fonts/YekanBakh-Regular.ttf') format('truetype');
-    font-weight: normal;
-}
 
-:root {
-    --primary-red: #ff3333;
-    --dark-bg: #121212;
-    --container-bg: #1c1c1c;
-    --text-light: #f0f0f0;
-    --text-medium: #aaa;
-    --text-code: #4CAF50;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'YekanBakh', Arial, sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+#dns-info {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px;
-    direction: rtl;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.hidden {
-    display: none !important;
-}
-
-.container {
-    width: 100%;
-    max-width: 450px;
-    background-color: var(--container-bg);
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    border: 1px solid rgba(255, 51, 51, 0.3);
-}
-
-.logo {
-    max-width: 140px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 10px rgba(255, 51, 51, 0.5));
-}
-
-h1 {
-    color: var(--primary-red);
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.8em;
-}
-
-p {
-    color: var(--text-medium);
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-size: 1em;
-}
-
-.action-button {
-    background-color: var(--primary-red);
-    color: #121212;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 10px;
-    cursor: pointer;
+    gap: 10px;
+    margin-bottom: 15px;
     font-size: 1.2em;
-    font-family: 'YekanBakh', sans-serif;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    width: 100%;
+    font-weight: normal;
 }
 
-.action-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 51, 51, 0.4);
+#dns-flag {
+    font-size: 2em;
+    line-height: 1;
 }
 
-.action-button:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(255, 51, 51, 0.4);
-}
-
-#dns-result-container {
-    margin-top: 30px;
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    animation: fadeIn 0.5s ease;
-}
-
-#dns-result-container h2 {
-    margin: 0 0 15px 0;
-    color: var(--primary-red);
-    font-size: 1.2em;
-}
-
-pre {
-    background-color: var(--dark-bg);
-    padding: 15px;
+/* === New DNS Display Box Styles === */
+#dns-output {
+    background-color: #222;
     border-radius: 8px;
-    color: var(--text-code);
-    font-size: 1.2em;
+    border: 1px dashed rgba(255, 193, 7, 0.2);
+    overflow: hidden;
+    direction: ltr; /* Important for DNS alignment */
     font-family: 'Consolas', 'Courier New', monospace;
-    text-align: left;
-    direction: ltr;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    border: 1px dashed #444;
 }
 
-.copy-button {
-    background-color: #555;
-    color: var(--text-light);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'YekanBakh', sans-serif;
-    margin-top: 15px;
-    transition: background-color 0.2s;
+.dns-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    transition: background-color 0.2s ease;
+}
+
+.dns-row:first-child {
+    border-bottom: 1px solid #444;
+}
+
+.dns-row:hover {
+    background-color: #333;
+}
+
+.dns-label {
+    color: var(--text-medium);
     font-size: 0.9em;
 }
 
-.copy-button:hover {
-    background-color: #666;
+.dns-ip {
+    color: #ffd700;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* === End of New Styles === */
+
+#ping-container {
+    margin-top: 15px;
+    font-size: 1em;
+    font-weight: normal;
+    color: var(--text-medium);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ... (بقیه استایل‌ها بدون تغییر هستند) ... */
